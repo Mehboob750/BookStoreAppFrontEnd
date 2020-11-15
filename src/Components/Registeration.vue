@@ -1,5 +1,5 @@
 <template>
-<div class=container>
+<div class="register-container d-flex justify-content-center align-items-center">
 <div class="card">
     <form action="" id="signUp-form" v-on:submit.prevent="submit">
     <div class="row">
@@ -124,6 +124,9 @@ export default {
 </script>
 
 <style>
+.register-container{
+  height: 100%;
+}
 .card{
     width: 450px;
     padding: 20px;

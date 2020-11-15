@@ -1,4 +1,5 @@
 <template>
+<div class="login-container d-flex justify-content-center align-items-center">
 <div class="card">
     <form action="" id="signIn-form" v-on:submit.prevent="submit">
     <div class="row">
@@ -24,6 +25,7 @@
       </div>
     </div>
   </form>
+</div>
 </div>
 </template>
 
@@ -105,6 +107,9 @@ export default {
 </script>
 
 <style>
+.login-container{
+  height: 100%;
+}
 .card{
     width: 350px;
     padding: 20px;
