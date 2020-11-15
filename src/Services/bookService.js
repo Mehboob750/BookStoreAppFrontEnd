@@ -6,5 +6,8 @@ export default {
     },
     getBooks(){
         return httpService.get("/Book");
+    },
+    deleteBook(id) {
+        return httpService.delete("/Book/"+id)
     }
 };

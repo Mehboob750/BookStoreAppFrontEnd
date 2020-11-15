@@ -8,5 +8,8 @@ export default {
   },
   get(url) {
     return axios.get(url);
+  },
+  delete(url) {
+    return axios.delete(url);
   }
 };

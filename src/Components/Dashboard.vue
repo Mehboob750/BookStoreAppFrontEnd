@@ -35,7 +35,7 @@
             <button class="button"><b-icon icon="pencil" class="btn-pencil rounded-circle p-2" variant="light" style="width: 40px; height: 40px;"></b-icon></button>
         </md-table-cell>
         <md-table-cell>
-            <button class="button"><b-icon icon="trash" class="btn-delete rounded-circle p-2" variant="light" style="width: 40px; height: 40px;"></b-icon></button>
+            <button class="button"  v-on:click="deleteBook(book)"><b-icon icon="trash" class="btn-delete rounded-circle p-2" variant="light" style="width: 40px; height: 40px;"></b-icon></button>
         </md-table-cell>
       </md-table-row>
     </md-table>
@@ -58,12 +58,22 @@ export default {
   },
    methods: {
        getBooks(){
-            console.log("Before Read"+this.books);
+            // console.log("Before Read"+this.books);
             bookService.getBooks().then(result => {
                 if (result.status == "200"){
                      this.books=result.data.data;
-                     console.log(this.books);
-                    console.log(result.data);
+                    //  console.log(this.books);
+                    // console.log(result.data);
+                }
+            }).catch(error => {
+                console.log(error);
+        });
+       },
+       deleteBook(book){
+           console.log(book);
+           bookService.deleteBook(book.bookId).then(result => {
+                if (result.status == "200"){
+                    this.getBooks();
                 }
             }).catch(error => {
                 console.log(error);

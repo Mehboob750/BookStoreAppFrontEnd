@@ -7,7 +7,7 @@
            <div class="title"><span class="text">Add Book</span></div>
         </div>
         <div class="col-12 d-flex justify-content-center align-items-center">
-            <img class="image1" src="../assets/add_image.png">
+            <img class="image1" :src="url">
         </div>
         <div class="input-image col-12 d-flex justify-content-center align-items-center">
            <input type="file" @change="onFileSelected" class="image-input">
@@ -54,8 +54,7 @@ export default {
      quantity: '',
      description: '',
      bookImage:null,
-     imageLink:'../assets/add_image.png',
-     url:''
+     url:'../assets/add_image.png'
    }
  },
  validations:{
@@ -80,7 +79,6 @@ export default {
         console.log(reader);
        reader.onload = event => {
         this.url = event.target.result;
-        console.log(this.url);
        }
    },
    
@@ -165,6 +163,7 @@ export default {
 }
 .image1{
     height: 120px;
+    margin: 10px 0 10px 0;
 }
 .btn-div{
     justify-content: space-between;
