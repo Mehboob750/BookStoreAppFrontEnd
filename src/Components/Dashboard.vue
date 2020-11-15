@@ -10,7 +10,7 @@
 </div>
 <div>
     <div class="btn-div">
-    <b-button class="btn-book" href="\dashboard" >Add Book</b-button>
+    <b-button class="btn-book" href="\dashboard\addBook" >Add Book</b-button>
     </div>
     <md-table class="table">
       <md-table-row class="table-row">

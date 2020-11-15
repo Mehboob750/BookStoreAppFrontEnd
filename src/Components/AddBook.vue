@@ -53,8 +53,9 @@ export default {
      price: '',
      quantity: '',
      description: '',
-     selectedFile:null,
-    //  imageLink:'../assets/add_image.png'
+     bookImage:null,
+     imageLink:'../assets/add_image.png',
+     url:''
    }
  },
  validations:{
@@ -69,9 +70,20 @@ export default {
      return typeof validation != "undefined" ? validation.$error : false;
    },
    onFileSelected(event){
-       //this.selectedFile = event.target.files[0];
-       console.log(event);
+       //store the image details
+       this.bookImage = event.target.files[0];
+       console.log(this.bookImage);
+       // for url purpose
+       let image = event.target.files[0];
+       let reader = new FileReader();
+       reader.readAsDataURL(image);
+        console.log(reader);
+       reader.onload = event => {
+        this.url = event.target.result;
+        console.log(this.url);
+       }
    },
+   
    submit: function(){
      this.$v.$touch();
      if (this.$v.$pendding || this.$v.$error) {
@@ -82,16 +94,17 @@ export default {
      }
    },
    addBook(){
-     let data = {
-       bookName: this.bookName,
-       authorName: this.authorName,
-       description: this.description,
-       price: this.price,
-       quantity: this.quantity
-     };
-     bookService.addBook(data).then(result => {
+    var formData = new FormData();
+    formData.append("bookName", this.bookName);
+    formData.append("authorName", this.authorName);
+    formData.append("description", this.description);
+    formData.append("price", this.price);
+    formData.append("quantity", this.quantity);
+    formData.append("image", this.bookImage);
+    console.log(formData)
+     bookService.addBook(formData).then(result => {
        if (result.status == "200"){
-        //window.location.href="/dashboard";
+        window.location.href="/dashboard";
        }
      }).then( ()=> {
        this.clearForm();
