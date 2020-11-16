@@ -102,6 +102,7 @@ export default {
     console.log(formData)
      bookService.addBook(formData).then(result => {
        if (result.status == "200"){
+        this.makeToast('success',result.data.message);
         window.location.href="/dashboard";
        }
      }).then( ()=> {
@@ -115,6 +116,13 @@ export default {
          this.clearForm();
        }
      })
+   },
+       makeToast(variant = null, message) {
+        this.$bvToast.toast(message, {
+          toaster:"b-toaster-bottom-center",
+          variant: variant,
+          solid: true
+        })
    },
    clearForm() {
       this.$v.$reset();

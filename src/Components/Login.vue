@@ -72,8 +72,9 @@ export default {
          localStorage.setItem("Role", result.data.data.role);
          localStorage.setItem("EmailId", result.data.data.emailId);
          localStorage.setItem("Token", result.data.data.token);
-        // window.location.href="/dashboard";
-        this.goToDashboard();
+         console.log(result.data.message)
+          this.makeToast('success',result.data.message);
+          this.goToDashboard();
        }
      }).then( ()=> {
        this.clearForm();
@@ -83,9 +84,17 @@ export default {
          this.clearForm();
        }
        else if (error.response.status == "404"){
+         this.makeToast('danger',"Login Failed, Invalid Credentials");
          this.clearForm();
        }
      })
+   },
+   makeToast(variant = null, message) {
+        this.$bvToast.toast(message, {
+          toaster:"b-toaster-bottom-center",
+          variant: variant,
+          solid: true
+        })
    },
    clearForm() {
       this.$v.$reset();
@@ -117,7 +126,6 @@ export default {
 .btn-vue {
   background-color:#A03037;
   color: white;
-  /* margin-left: 50px; */
 }
 .head1 {
   color: #A03037;
