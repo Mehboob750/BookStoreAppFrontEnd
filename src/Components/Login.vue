@@ -20,7 +20,7 @@
         <div v-if="!$v.password.maxLength" class="invalid-feedback">You must have at least {{ $v.password.$params.maxLength.max}} letters</div>
       </div>
       <div class="col-12 btn-div form-group d-flex justify-content-space-between align-items-center">
-        <a class="link" href="\register">Create Account</a>
+        <a class="link" href="\register">Create account</a>
         <button class="btn btn-vue btn-lg col-5">Log In</button>
       </div>
     </div>

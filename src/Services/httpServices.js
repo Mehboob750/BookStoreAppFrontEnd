@@ -11,5 +11,8 @@ export default {
   },
   delete(url) {
     return axios.delete(url);
+  },
+  update(url, data) {
+    return axios.put(url, data);
   }
 };

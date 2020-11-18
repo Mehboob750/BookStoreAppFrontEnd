@@ -14,6 +14,7 @@
     "vue": "^2.5.11",
     "vue-axios": "^3.1.3",
     "vue-material": "^1.0.0-beta-15",
+    "vue-media-queries": "0.0.5",
     "vue-router": "^3.4.9",
     "vuelidate": "^0.7.6"
   },

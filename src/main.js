@@ -12,7 +12,7 @@ import axios from "axios";
 axios.defaults.baseURL = "https://localhost:44392/api";
 Vue.use(VueMaterial);
 Vue.use(BootstrapVue);
-Vue.use(BootstrapVueIcons)
+Vue.use(BootstrapVueIcons);
 Vue.use(Vuelidate);
 Vue.use(VueRouter);
 

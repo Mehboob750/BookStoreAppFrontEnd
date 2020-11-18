@@ -3,35 +3,35 @@
 <div class="card">
     <form action="" id="signUp-form" v-on:submit.prevent="submit">
     <div class="row">
-      <div class="head1 col-12 d-flex justify-content-start">Book Store</div>
-      <div class="head2 col-12 d-flex justify-content-start">Create Book Store Account</div>
-      <div class="col-6 form-group">
+      <div class="head1 col-lg-12 col-xs-12 d-flex justify-content-start">Book Store</div>
+      <div class="head2 col-lg-12 col-xs-12 d-flex justify-content-start">Create Book Store Account</div>
+      <div class="col-lg-6 col-xs-6 form-group">
         <label for="" class="col-form-label-lg">First Name<span class="text-danger">*</span></label>
         <input type="text" v-model.trim="$v.firstName.$model" :class="{'is-invalid': validationStatus($v.firstName)}" class="form-control" />
         <div v-if="!$v.firstName.required" class="invalid-feedback">First name is required</div>
       </div>
-      <div class="col-6 form-group">
+      <div class="col-lg-6 col-xs-6 form-group">
         <label for="" class="col-form-label-lg">Last Name<span class="text-danger">*</span></label>
         <input type="text" v-model.trim="$v.lastName.$model" :class="{'is-invalid': validationStatus($v.lastName)}" class="form-control" />
         <div v-if="!$v.lastName.required" class="invalid-feedback">Last name is required</div>
       </div>
-      <div class="col-6 form-group">
+      <div class="col-lg-6 col-xs-6 form-group">
         <label for="" class="col-form-label-lg">Phone Number<span class="text-danger">*</span></label>
         <input type="text" v-model.trim="$v.phoneNumber.$model" :class="{'is-invalid': validationStatus($v.phoneNumber)}" class="form-control" />
         <div v-if="!$v.phoneNumber.required" class="invalid-feedback">Phone number is required</div>
       </div>
-      <div class="col-6 form-group">
+      <div class="col-lg-6 col-xs-6 form-group">
         <label for="" class="col-form-label-lg">Role<span class="text-danger">*</span></label>
         <input type="text" v-model.trim="$v.role.$model" :class="{'is-invalid': validationStatus($v.role)}" class="form-control" />
         <div v-if="!$v.role.required" class="invalid-feedback">Role is required</div>
       </div>
-       <div class="col-12 form-group">
+       <div class="col-lg-12 col-xs-12 form-group">
         <label for="" class="col-form-label-lg">Email Id<span class="text-danger">*</span></label>
         <input type="text" v-model.trim="$v.email.$model" :class="{'is-invalid': validationStatus($v.email)}" class="form-control" />
         <div v-if="!$v.email.required" class="invalid-feedback">Email is required</div>
         <div v-if="!$v.email.email" class="invalid-feedback">Email is not valid</div>
       </div>
-      <div class="col-12 form-group">
+      <div class="col-lg-12 col-xs-12 form-group">
         <label for="" class="col-form-label-lg">Password<span class="text-danger">*</span></label>
         <input type="password" v-model.trim="$v.password.$model" :class="{'is-invalid': validationStatus($v.password)}" class="form-control" />
         <div v-if="!$v.password.required" class="invalid-feedback">Password is required</div>
@@ -39,7 +39,7 @@
         <div v-if="!$v.password.maxLength" class="invalid-feedback">You must have at least {{ $v.password.$params.maxLength.max}} letters</div>
 
       </div>
-      <div class="col-12 btn-div form-group d-flex justify-content-space-between align-items-center">
+      <div class="col-lg-12 col-xs-12 btn-div form-group d-flex justify-content-space-between align-items-center">
         <a class="link" href="\login">Sign in instead</a>
         <button class="btn btn-vue btn-lg col-5">Register</button>
       </div>

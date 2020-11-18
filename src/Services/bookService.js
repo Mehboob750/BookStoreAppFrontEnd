@@ -8,6 +8,9 @@ export default {
         return httpService.get("/Book");
     },
     deleteBook(id) {
-        return httpService.delete("/Book/"+id)
+        return httpService.delete("/Book/"+id);
+    },
+    updateBook(data,id) {
+        return httpService.update("/Book/"+id, data);
     }
 };
